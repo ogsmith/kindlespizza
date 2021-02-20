@@ -493,11 +493,11 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .btn-menu, #hero .btn-book {
   font-weight: 600;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: inline-block;
-  padding: 12px 30px;
+  padding: 15px 55px;
   border-radius: 50px;
   transition: 0.3s;
   line-height: 1;
@@ -505,12 +505,69 @@ h1, h2, h3, h4, h5, h6 {
   border: 2px solid #cda45e;
 }
 
-#hero .btn-menu:hover, #hero .btn-book:hover {
+#hero .btn-menu-2, #hero .btn-book {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 55px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+
+
+#bonus1 .btn-menu:hover, #bonus1 .btn-book:hover {
   background: #cda45e;
   color: #fff;
 }
 
-#hero .btn-book {
+#bonus1 .btn-book {
+  margin-left: 15px;
+}
+#bonus1 .btns {
+  margin-top: 30px;
+}
+
+#bonus1 .btn-menu, #bonus1 .btn-book {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 55px;
+  text-align: center;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+
+#bonus1 .btn-menu-2, #bonus1 .btn-book {
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 15px 55px;
+  border-radius: 50px;
+  transition: 0.3s;
+  line-height: 1;
+  color: white;
+  border: 2px solid #cda45e;
+}
+
+
+#bonus1 .btn-menu:hover, #bonus1 .btn-book:hover {
+  background: #cda45e;
+  color: #fff;
+}
+
+#bonus1 .btn-book {
   margin-left: 15px;
 }
 
