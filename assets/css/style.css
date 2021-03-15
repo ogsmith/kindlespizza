@@ -443,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hero-bg.png") top center;
+  background: url("../img/fire.jpg") center;
   background-size: cover;
   position: relative;
   padding: 0;
@@ -451,7 +451,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero:before {
   content: "";
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, .6);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -469,11 +469,19 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+#hero b {
+  opacity: 1;
+}
+
+#hero p {
+  opacity: 1;
+}
 #hero h1 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
   color: #fff;
+  opacity: 1;
   font-family: "Poppins", sans-serif;
 }
 
@@ -489,6 +497,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .btns {
   margin-top: 30px;
+  opacity: 1;
+
 }
 
 #hero .btn-menu, #hero .btn-book {
@@ -508,6 +518,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-menu-2, #hero .btn-book {
   font-weight: 600;
   font-size: 15px;
+  opacity: 1;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   display: inline-block;
