@@ -6,12 +6,37 @@
 */
 
 /*--------------------------------------------------------------
+# Modern CSS Variables
+--------------------------------------------------------------*/
+:root {
+  --primary-color: #cda45e;
+  --primary-dark: #b8923d;
+  --primary-light: #d9ba85;
+  --background-dark: #0c0b09;
+  --background-secondary: #1a1814;
+  --text-light: #fff;
+  --text-muted: #aaa;
+  --gradient-fire: linear-gradient(135deg, #ff6b35, #f7931e, #ffd23f);
+  --gradient-dark: linear-gradient(135deg, #1a1814, #2d2b26);
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.3);
+  --shadow-hover: 0 15px 40px rgba(205,164,94,0.2);
+  --border-radius: 12px;
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
   font-family: "Poppins", sans-serif;
-  background: #0c0b09;
-  color: #fff;
+  background: var(--background-dark);
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -1803,4 +1828,286 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+}
+
+/*--------------------------------------------------------------
+# Modern Instagram Feed Section
+--------------------------------------------------------------*/
+.instagram-section {
+  padding: 80px 0;
+  background: var(--gradient-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(205,164,94,0.05) 0%, rgba(255,107,53,0.05) 100%);
+  z-index: 1;
+}
+
+.instagram-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.instagram-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.instagram-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: var(--gradient-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.instagram-title p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.instagram-container {
+  background: rgba(26,24,20,0.8);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(205,164,94,0.2);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.instagram-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: var(--gradient-fire);
+  transition: left 0.5s ease;
+}
+
+.instagram-container:hover::before {
+  left: 0;
+}
+
+.instagram-embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+  border-radius: 8px;
+  background: #000;
+}
+
+/*--------------------------------------------------------------
+# Enhanced Animations and Effects
+--------------------------------------------------------------*/
+
+/* Floating animation for hero elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.floating {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Pulse animation for buttons */
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(205,164,94,0.4); }
+  70% { box-shadow: 0 0 0 15px rgba(205,164,94,0); }
+  100% { box-shadow: 0 0 0 0 rgba(205,164,94,0); }
+}
+
+.btn-menu {
+  transition: var(--transition-smooth) !important;
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius) !important;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-menu:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-menu:hover:before {
+  left: 100%;
+}
+
+.btn-menu:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Gradient text effects */
+.gradient-text {
+  background: var(--gradient-fire);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: var(--transition-smooth);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Smooth section transitions */
+section {
+  transition: var(--transition-smooth);
+}
+
+/* Enhanced social icons */
+.social-links a {
+  transition: var(--transition-smooth) !important;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-links a:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-fire);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.social-links a:hover:before {
+  transform: scale(1);
+}
+
+.social-links a:hover {
+  transform: rotate(360deg);
+  color: white !important;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-fire);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Loading animation for images */
+@keyframes shimmer {
+  0% { background-position: -200px 0; }
+  100% { background-position: calc(200px + 100%) 0; }
+}
+
+.image-loading {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Enhanced typography */
+h1, h2, h3 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Improved button styles */
+.book-a-table-btn {
+  background: var(--gradient-fire) !important;
+  border: none !important;
+  padding: 12px 30px !important;
+  border-radius: var(--border-radius) !important;
+  transition: var(--transition-smooth) !important;
+  box-shadow: var(--shadow-soft) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+}
+
+.book-a-table-btn:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: var(--shadow-hover) !important;
+  filter: brightness(1.1) !important;
+}
+
+/* Enhanced hero section */
+#hero {
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), 
+              url('../img/hero-bg.png') center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(205,164,94,0.1) 0%, transparent 70%);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .instagram-embed {
+    height: 400px;
+  }
+  
+  .instagram-title h2 {
+    font-size: 2rem;
+  }
+  
+  .instagram-container {
+    padding: 20px;
+  }
 }
